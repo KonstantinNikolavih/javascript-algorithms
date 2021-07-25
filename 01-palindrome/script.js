@@ -14,15 +14,32 @@
 */
 
 function palindrome(str) {
-    // Напишите код здесь
-}
+  let a = [], b = [];
+  if ( typeof str === 'string') {
+    const strLowerCase = str.toLowerCase();
+    let palindrom = true;
+    const symbols = [];
+    for (let ind = 0; ind < strLowerCase.length; ind++) {
+        if (!symbols.includes(strLowerCase[ind])) {
+            a.push(strLowerCase[ind]);
+       }
+    }
+    b = a.concat().reverse();
+    for (let ind= 0; ind < a.length; ind++) {
+        if (a[ind] != b[ind]) {
+            palindrom = false;
+            break; 
+        }
 
-// Протестируйте решение, вызывая функцию с разными аргументами:
+    }
+    return palindrom;      
+  }      
+  } 
 
 console.log(palindrome('топот')); // должно быть true
 console.log(palindrome('Saippuakivikauppias')); // true
 console.log(palindrome('привет')); // false
-
+ 
 /*
  * Бонус. Задача для любознательных. Пусть функция принимает на вход любую строку,
  * но пробелы и знаки препинания не учитывает. Например:

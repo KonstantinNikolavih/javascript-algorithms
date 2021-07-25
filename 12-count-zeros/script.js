@@ -7,8 +7,27 @@
 */
 
 function countZeros(n) {
-    // Напишите код здесь
-}
+  const a = n + '';
+  let zero = 0;
+  let digits = a.length - 2;
+  let num;
+    if (digits == -1) {
+    return 0; }  else if (digits === 0) {
+    zero = a[0] * 1;
+    return zero; } 
+    else { 
+    for(let i = 1; i <= a.length - 1; i++) { 
+    num = a[i] * 1;
+    if (i == a.length - 1) { zero = zero + Math.floor(n / 10);
+      } else if (num != 0) { zero = zero + (a[i - 1] * (10**(digits)));
+      } else { 
+  let bigDigit = a[i - 1] * 1;
+  zero = zero + (bigDigit - 1) * (10**digits) + 1;
+   }
+  } 
+    return zero;
+    }
+  };
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 

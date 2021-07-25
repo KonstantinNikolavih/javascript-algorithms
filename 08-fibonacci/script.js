@@ -9,9 +9,22 @@
 */
 
 function fibonacci(n) {
-    // Напишите код здесь
-}
-
+  if ((typeof n === 'number') && (n >= 0)) {
+  let a = 1, b = 0, c = 0;
+  if ((n === 0) || (n === 1)) { 
+    return 0;
+    }else{ 
+    for(let i = 3; i <= n; i++) { 
+      c = a; 
+      a += b; 
+      b = c;
+    } 
+  return a;
+  }
+} else {
+   return a,b,c;
+  }
+};
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(fibonacci(4)); // 2. Четвёртое число последовательности — двойка (0, 1, 1, 2)
