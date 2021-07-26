@@ -20,6 +20,7 @@ function countZeros(n) {
     num = a[i] * 1;
     if (i == a.length - 1) { zero = zero + Math.floor(n / 10);
       } else if (num != 0) { zero = zero + (a[i - 1] * (10**(digits)));
+      } else if (num != 0) { zero = zero + (a[i - 1] * (100**(digits)));
       } else { 
   let bigDigit = a[i - 1] * 1;
   zero = zero + (bigDigit - 1) * (10**digits) + 1;
